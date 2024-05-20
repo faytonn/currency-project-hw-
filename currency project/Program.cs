@@ -34,6 +34,28 @@
                     }
 
                 }
-            }
+
+                else if (command == "2")
+                {
+                    Console.WriteLine("Please write a currency code (USD, RUB, TRY)");
+                    string code_of_currency = Console.ReadLine().ToUpper();
+                    bool found = false;
+
+                    while (i < currencyCodes.Length)
+                    {
+                        if (currencyCodes[i] == code_of_currency)
+                        {
+                            Console.WriteLine($"{currencyCodes[i]} : {currencyRates[i]}");
+                            found = true;
+                            break;
+                        }
+
+                        i++;
+                    }
+                    if (!found)
+                    {
+                        Console.WriteLine("Invalid code written.");
+                    }
+        }        
     }
 }
