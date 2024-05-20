@@ -68,7 +68,7 @@ namespace currency_project
                     if (amount >= 0)
                     {
                         Console.WriteLine("Please enter a code of currency (USD, RUB, TRY)");
-                        string currency_code2 = Console.ReadLine();
+                        string currency_code2 = Console.ReadLine().ToUpper();
 
                         bool found = false;
                         while (i < currencyCodes.Length)
@@ -78,7 +78,7 @@ namespace currency_project
                                 decimal rate = currencyRates[i];
                                 decimal amountConversion = rate * amount;
                                 Console.WriteLine($"Entered amount is {amountConversion} AZN");
-                                found = false;
+                                found = true ;
                                 break;
                             }
                             i++;
